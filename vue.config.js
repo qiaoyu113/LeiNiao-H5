@@ -1,8 +1,6 @@
 const path = require('path')
 const Timestamp = new Date().getTime();
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
-const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const port = process.env.port || process.env.npm_config_port || 8899
 const cdnDomian = '/' // cdn域名，如果有cdn修改成对应的cdn
 const name = '雷鸟综合业务支撑平台' // page title
@@ -203,20 +201,10 @@ module.exports = {
             deleteOriginalAssets: false // 是否删除源文件
           }
         ])
-      config.optimization.minimizer([
-        new UglifyjsWebpackPlugin({
-          // 生产环境推荐关闭 sourcemap 防止源码泄漏
-          // 服务端通过前端发送的行列，根据 sourcemap 转为源文件位置
-          sourceMap: true,
-          uglifyOptions: {
-            warnings: false,
-            compress: {
-              drop_console: true,
-              drop_debugger: true
-            }
-          }
+        config.optimization.minimizer('terser').tap((args) => {
+            args[0].terserOptions.compress.drop_console = true
+            return args
         })
-      ])
     }
   },
   css: {
@@ -226,10 +214,10 @@ module.exports = {
     sourceMap: false,
     // css预设器配置项
     // 启用 CSS modules for all css / pre-processor files.
-    modules: false,
+    requireModuleExtension: true,
     loaderOptions: {
       sass: {
-        data: '@import "assets/style/_mixin.scss";@import "assets/style/_variables.scss";@import "assets/style/common.scss";' // 全局引入
+        prependData:  `@import "assets/style/_mixin.scss";@import "assets/style/_variables.scss";@import "assets/style/common.scss";` // 全局引入
       },
       less: {
         // 若使用 less-loader@5，请移除 lessOptions 这一级，直接配置选项。

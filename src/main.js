@@ -15,7 +15,6 @@ import * as directives from '@/directives'
 import { permissionDetail, checkRouteIsNull } from '@/utils'
 Vue.prototype.$permissionDetail = permissionDetail
 Vue.prototype.$checkRouteIsNull = checkRouteIsNull
-import '@vant/touch-emulator';
 require('./initPlugins');
 // Register global directives
 Object.keys(directives).forEach(key => {
