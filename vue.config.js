@@ -38,7 +38,6 @@ module.exports = {
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: true,
-  lintOnSave: false, //是否开启eslint
   devServer: {
     port: port,
     open: true,
