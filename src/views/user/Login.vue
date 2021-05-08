@@ -186,7 +186,7 @@ export default {
     /**
      * 校验密码
      */
-    validatorPassword(val) {
+    validatorPassword() {
       return true
     },
     /**
