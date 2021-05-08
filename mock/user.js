@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 const tokens = {
   '13216698987': 'admin-token',
   '123456': 'editor-token'

@@ -1,4 +1,4 @@
-// import { login, getInfo } from 'api/user'
+/* eslint-disable */
 import { loginByAccount } from 'api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'

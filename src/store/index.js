@@ -17,7 +17,7 @@ export default new Vuex.Store({
     direction: 'forward' // 页面切换方向
   },
   getters: {
-    userData(state, getters) {
+    userData(state) {
       return state.user.user
       // return getters['user/user']
     }

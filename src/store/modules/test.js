@@ -5,7 +5,7 @@ const actions = {
   onePlusAsync: ({ commit }, { val }) => {
     // commit('setLoading', true, { root: true }) // 调用全局vuex的setLoading方法
     // 需要使用promise用来配合loading
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         commit('onePlus', val)
         resolve()
