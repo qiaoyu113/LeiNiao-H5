@@ -74,7 +74,7 @@ export default {
         {
           name: '线路云',
           value: 0,
-          pUrl: ['/v3/line/shelf/maintenance/queryLineShelfInfo', '/v2/line/customer/queryLineCustomerList', '/v2/line/project/queryProjectQueryList', '/v2/line/lineInfo/queryLineListByConditionsQuery']
+          pUrl: ['/v1/score/assess/h5']
         }
       ],
       activeIndex: 0,
@@ -85,7 +85,7 @@ export default {
             title: '项目管理',
             url: '/project',
             icon: 'project',
-            pUrl: '/v2/line/project/queryProjectQueryList',
+            pUrl: '/v1/score/assess/h5',
             style: {
               width: '0.9333rem',
               height: '1.0933rem'
