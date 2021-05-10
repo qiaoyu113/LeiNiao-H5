@@ -21,16 +21,9 @@
                   >
                     <svg-icon class="icon" :icon-class="item.icon" />
                     <div class="badge-info">
-                      <template v-if="item.url === '/backlog'">
-                        <template v-permission="['/v3/line/shelf/maintenance/queryLineShelfAllStatusAndTotalNum']">
+                      <template>
                           {{ getTotal(item.total) }}
                         </template>
-                      </template>
-                      <template v-else-if="item.url === '/try-run'">
-                        <template v-permission="['/v2/runtest/countToConfirmIntentionAndArrive']">
-                          {{ getTotal(item.total) }}
-                        </template>
-                      </template>
                     </div>
                   </div>
 
@@ -68,28 +61,29 @@ export default {
   },
   data() {
     return {
-      totalNum: 0, // 我的待办总数
-      tryrunNum: 0,
+      totalNum: 10, // 我的待办总数
       actions: [
         {
-          name: '线路云',
+          name: '看车单管理',
           value: 0,
           pUrl: ['/v1/score/assess/h5']
         }
       ],
       activeIndex: 0,
       list: [
-        // 线路云
+        // 看车单管理
         [
           {
-            title: '项目管理',
-            url: '/project',
+            title: '看车单管理',
+            url: '/carManage',
             icon: 'project',
+            total:10,
             pUrl: '/v1/score/assess/h5',
             style: {
               width: '0.9333rem',
               height: '1.0933rem'
-            }
+            },
+            total: 'totalNum'
           },
         ]
       ]
