@@ -57,7 +57,6 @@ export function popUpProjectCurationEdit(params) {
     params: params
   })
 }
-
 /* 获取线路运营手机号  */
 export function getLineOperationPhone(params) {
   return request({
