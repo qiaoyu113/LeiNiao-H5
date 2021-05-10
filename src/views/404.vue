@@ -12,7 +12,7 @@
           OOPS!
         </div>
         <div class="bullshit__info">
-          版权所有 雷鸟
+          版权所有 北京云鸟科技有限公司
         </div>
         <div class="bullshit__headline">
           {{ message }}
