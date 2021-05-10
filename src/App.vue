@@ -121,7 +121,7 @@ html,body{ margin:0px; height:100%;}
   height: 100%;
   position: relative;
   .van-nav-bar{
-    background: #474C4F !important;
+    background: linear-gradient(270deg, #0064F3 0%, #188FF9 100%) !important;
   }
 }
 </style>

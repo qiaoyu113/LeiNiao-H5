@@ -18,11 +18,11 @@
     </van-tabbar-item>
     <van-tabbar-item
       replace
-      to="/mycenter"
+      to="/myCenter"
     >
       <span>个人中心</span>
       <template #icon="props">
-        <svg-icon class="icon" :icon-class="props.active?'users':'user-d'" />
+        <svg-icon class="icon" :icon-class="props.active?'users':'users-d'" />
       </template>
     </van-tabbar-item>
   </van-tabbar>
@@ -40,6 +40,18 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+::v-deep .van-tabbar-item{
+    .van-tabbar-item__text{
+        font-weight: 500;
+        color: #929599
+    }
+    &.van-tabbar-item--active{
+        .van-tabbar-item__text{
+            font-weight: 500;
+            color: #188FF9;
+        }
+    }
+}
 .FooterTabbar{
   ::v-deep{
     .van-tabbar-item{

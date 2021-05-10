@@ -16,17 +16,14 @@
                 :to="item.url"
               >
                 <div class="grid-ct flex-sub">
-                  <div
-                    class="list-badge"
-                  >
-                    <svg-icon class="icon" :icon-class="item.icon" />
+                  <div class="list-badge">
+                    <van-image width="80" height="80" :src="require(`../../assets/images/${item.icon}`)"/>
                     <div class="badge-info">
                       <template>
                           {{ getTotal(item.total) }}
                         </template>
                     </div>
                   </div>
-
                   <div class="grid-text">
                     <span v-if="!item.isWrap">
                       {{ item.title }}
@@ -76,7 +73,7 @@ export default {
           {
             title: '看车单管理',
             url: '/carManage',
-            icon: 'project',
+            icon: 'cardList.png',
             pUrl: '/v1/score/assess/h5',
             style: {
               width: '0.9333rem',
@@ -150,11 +147,11 @@ export default {
     color: @gray-9;
   }
   .list-title-lebel {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
-    padding-bottom: 20px;
-    padding-top: 12px;
-    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-left: 25px;
   }
   .list-content {
     .grid-ct {
@@ -190,6 +187,12 @@ export default {
       }
       p:nth-last-child(1){
         margin-top: 3px;
+      }
+      span{
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #4A4A4A;
       }
     }
     ::v-deep {

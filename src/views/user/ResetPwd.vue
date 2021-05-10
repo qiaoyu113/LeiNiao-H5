@@ -13,8 +13,8 @@
         :readonly="isReadonly"
         label="原密码"
         clearable
+        :border="false"
         :type="hideFrom.oldType"
-        label-align="center"
         maxlength="16"
         name="用户名"
         :rules="[{ required: true, message: message.oldMsg }]"
@@ -34,8 +34,8 @@
         label="新密码"
         maxlength="16"
         clearable
+        :border="false"
         :type="hideFrom.newType"
-        label-align="center"
         :rules="[
           { required: true, message: message.newMsg },
           {
@@ -60,9 +60,9 @@
         :readonly="isReadonly"
         :type="hideFrom.rejectType"
         clearable
+        :border="false"
         label="确认新密码"
         maxlength="16"
-        label-align="center"
         name="rejectPwd"
         :rules="[
           { required: true, message: message.regMsg },
@@ -92,9 +92,10 @@
       <div class="submit-btn">
         <van-button
           v-preventreclick
-          block
-          :disabled="isDisabld"
           type="info"
+          block
+          color="#188FF9"
+          :disabled="isDisabld"
           native-type="button"
           @click="resetPwd"
         >
@@ -155,7 +156,7 @@ export default {
       }
       // if (this.$route.params.isLogin) return
 
-      this.$router.replace({ path: '/mycenter' })
+      this.$router.replace({ path: '/myCenter' })
     },
     async resetPwd() {
       try {
@@ -211,7 +212,7 @@ export default {
         this.$toast.success('密码修改成功')
         this.$store.commit('user/SETRESETPWD', false)
         const timeR = setTimeout(() => {
-          this.$router.push({ path: '/mycenter' })
+          this.$router.push({ path: '/myCenter' })
         })
         this.$once('hook:beforeDestroy', () => {
           window.clearTimeout(timeR)
@@ -230,8 +231,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+::v-deep .van-cell{
+    margin-bottom: 5px;
+    &:first-child{
+        padding-top: 20px;
+    }
+    .van-cell__title{
+        span{
+            font-size: 14px;
+            font-weight: 400;
+            color: #000000;
+        }
+    }
+}
+::v-deep .van-button--plain.van-button--info{
+    border-color: #188FF9;
+    opacity: 1;
+    .van-button__text{
+        color:#188FF9;
+    }
+}
+::v-deep .van-button{
+    height: 48px;
+    line-height: 48px;
+}
 .resetPwd {
   width: 100%;
+  background:#FBFBFB;
 }
 .cell-top {
   margin-top: 20px;
@@ -243,10 +269,10 @@ export default {
 }
 .description {
   margin-top: 24px;
-  padding: 0 8px;
+  padding: 0 25px;
   p {
-    font-size: 13px;
-    color: #999;
+    font-size: 12px;
+    color: #9B9B9B;
     margin: 3px 0;
   }
 }
@@ -254,12 +280,8 @@ export default {
   font-size: 17px;
 }
 .submit-btn {
-  margin: 120px 16px 0 16px;
-}
-</style>
-<style scoped>
-.resetPwd /deep/ .van-field__button {
-  display: flex;
-  align-items: center;
+  width: 100%;
+  position: fixed;
+  bottom:0;
 }
 </style>

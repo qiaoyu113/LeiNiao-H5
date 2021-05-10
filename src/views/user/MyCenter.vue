@@ -1,15 +1,20 @@
 <template>
   <div class="mycenter">
     <van-nav-bar title="个人中心" />
+    <div class="userInfo">
+        <span class="avatar"></span>
+        <h2 class="name">老王</h2>
+        <p class="phone">手机号：18666666666</p>
+        <p class="role">角色：成交售后经理；租赁 BGP；成交售后经理；
+         租赁BGP;成交售后经理；租赁BGP</p>
+    </div>
     <div class="cell-top">
       <van-cell title="修改密码" is-link @click="toResetPwd" />
     </div>
-    <div
-      style="padding: 30px; box-sizing: border-box"
-    >
+    <div style="padding: 0 38px; box-sizing: border-box">
       <van-button
-        style="margin-top: 40%"
-        color="linear-gradient(to right, #ff6034, #ee0a24)"
+        style="margin-top: 50px"
+        plain type="info"
         block
         @click="removeLocal"
       >
@@ -56,14 +61,69 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+::v-deep .van-button--plain.van-button--info{
+    border-color: #188FF9;
+    .van-button__text{
+        color:#188FF9
+    }
+}
+::v-deep .van-cell{
+    padding-left: 25px;
+    padding-right:25px;
+    span{
+        font-size: 16px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #000000;
+    }
+}
+::v-deep .van-tabbar-item__icon{
+    margin-bottom: 2px;
+}
 .mycenter {
   width: 100%;
+    background: #FBFBFB;
+  .userInfo{
+    padding: 10px 30px 0;
+    text-align: center;
+    background: #fff;
+  }
+  .avatar{
+      display: block;
+      width:41px;
+      height: 41px;
+      background: url("./imgs/userIcon.png") no-repeat;
+      background-size: 100% 100%;
+      margin: 0 auto 10px;
+  }
+  .name{
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #4A4A4A;
+        margin: 0;
+  }
+  .phone{
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #656565;
+        margin: 0;
+  }
+  .role{
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #656565;
+        padding: 19px 0;
+        margin: 0;
+  }
 }
 .cell-top{
-  margin-top: 20px;
-  border-top:1px solid #e4e4e4;
-  border-bottom:1px solid #e4e4e4;
+  margin-top: 9px;
   color: #333;
+  height: 50px;
+  line-height: 50px;
   font-weight: 600;
   font-size: 22px;
 }

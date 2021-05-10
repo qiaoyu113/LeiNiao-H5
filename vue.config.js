@@ -56,7 +56,7 @@ module.exports = {
       },
       '/api': {
         // target: `http://localhost:${mockServerPort}/mock-api/v1`,
-        target: IS_PRODUCTION ? cdnDomian : 'https://szjw-bss-h5.d2.yunniao.cn', //'http://192.168.0.82:30150',
+        target: IS_PRODUCTION ? cdnDomian : 'https://szjw-bss-h5.m1.yunniao.cn', //'http://192.168.0.82:30150',
         // target: 'http://szjw-domain-gateway.d2.yunniao.cn',
         changeOrigin: true, // needed for virtual hosted sites
         secure: false,
