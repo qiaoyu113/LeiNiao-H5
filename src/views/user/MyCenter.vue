@@ -3,10 +3,9 @@
     <van-nav-bar title="个人中心" />
     <div class="userInfo">
         <span class="avatar"></span>
-        <h2 class="name">老王</h2>
-        <p class="phone">手机号：18666666666</p>
-        <p class="role">角色：成交售后经理；租赁 BGP；成交售后经理；
-         租赁BGP;成交售后经理；租赁BGP</p>
+        <h2 class="name">{{userData.bssLoginName?userData.bssLoginName:'暂无'}}</h2>
+        <p class="phone">手机号：{{userData.mobile?userData.mobile:'暂无'}}</p>
+        <p class="role">角色：{{userData.roleName?userData.roleName:"暂无"}}</p>
     </div>
     <div class="cell-top">
       <van-cell title="修改密码" is-link @click="toResetPwd" />
@@ -18,7 +17,7 @@
         block
         @click="removeLocal"
       >
-        退出登陆
+        退出登录
       </van-button>
     </div>
     <footer-tabbar />
@@ -27,6 +26,7 @@
 <script>
 import { Tabbar, TabbarItem, Toast, Tab, Tabs } from 'vant'
 import FooterTabbar from '@/components/FooterTabbar'
+import { mapGetters } from 'vuex'
 export default {
   name: 'MyCenter',
   components: {
@@ -41,6 +41,9 @@ export default {
     return {
 
     }
+  },
+  computed: {
+    ...mapGetters(['userData'])
   },
   mounted() {
   },
