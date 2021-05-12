@@ -296,6 +296,6 @@ export default {
 
 <style scoped>
   .login >>> .van-cell::after {
-    border-color: #2F448A;
+    border-color: #188FF9;
   }
 </style>

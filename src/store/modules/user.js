@@ -79,7 +79,7 @@ export default {
           data.$fail(res.errorMsg)
         }
       } catch (error) {
-        console.log(`login error:${error}`,)
+        console.log(`login error:${error}`)
       } finally {
         data.$loading(false)
       }

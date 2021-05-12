@@ -72,25 +72,25 @@ export default {
       tryrunNum: 0,
       actions: [
         {
-          name: '线路云',
+          name: '看车单管理',
           value: 0,
           pUrl: ['/v3/line/shelf/maintenance/queryLineShelfInfo', '/v2/line/customer/queryLineCustomerList', '/v2/line/project/queryProjectQueryList', '/v2/line/lineInfo/queryLineListByConditionsQuery']
         }
       ],
       activeIndex: 0,
       list: [
-        // 线路云
+        // 看车单管理
         [
           {
-            title: '项目管理',
-            url: '/project',
-            icon: 'project',
-            pUrl: '/v2/line/project/queryProjectQueryList',
+            title: '看车单管理',
+            url: '/visit-car',
+            icon: 'grade',
+            pUrl: '/v1/score/assess/h5',
             style: {
-              width: '0.9333rem',
+              width: '1.0933rem',
               height: '1.0933rem'
             }
-          },
+          }
         ]
       ]
     };
