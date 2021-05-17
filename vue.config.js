@@ -56,7 +56,7 @@ module.exports = {
       },
       '/api': {
         // target: `http://localhost:${mockServerPort}/mock-api/v1`,
-        target: IS_PRODUCTION ? cdnDomian : 'https://szjw-bss-h5.m1.yunniao.cn', //'http://192.168.0.82:30150',
+        target: IS_PRODUCTION ? cdnDomian : 'https://szjw-bss-h5.m1.yunniao.cn', // 'http://192.168.0.82:30150',
         // target: 'http://szjw-domain-gateway.d2.yunniao.cn',
         changeOrigin: true, // needed for virtual hosted sites
         secure: false,
@@ -201,10 +201,10 @@ module.exports = {
             deleteOriginalAssets: false // 是否删除源文件
           }
         ])
-        config.optimization.minimizer('terser').tap((args) => {
-            args[0].terserOptions.compress.drop_console = true
-            return args
-        })
+      config.optimization.minimizer('terser').tap((args) => {
+        args[0].terserOptions.compress.drop_console = true
+        return args
+      })
     }
   },
   css: {
@@ -217,7 +217,7 @@ module.exports = {
     requireModuleExtension: true,
     loaderOptions: {
       sass: {
-        prependData:  `@import "assets/style/_mixin.scss";@import "assets/style/_variables.scss";@import "assets/style/common.scss";` // 全局引入
+        prependData: '@import "assets/style/_mixin.scss";@import "assets/style/_variables.scss";@import "assets/style/common.scss";' // 全局引入
       },
       less: {
         // 若使用 less-loader@5，请移除 lessOptions 这一级，直接配置选项。

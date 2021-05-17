@@ -1,38 +1,40 @@
 <template>
   <div class="login">
-    <div class="logo"/>
-    <h1 class="title">雷鸟综合业务支撑平台</h1>
+    <div class="logo" />
+    <h1 class="title">
+      雷鸟综合业务支撑平台
+    </h1>
     <van-form ref="loginForm" :show-error="false" class="form" @submit="onSubmit">
-        <van-field
-          v-model="loginForm.account"
-          name="validatorAccount"
-          placeholder="请输入账号"
-          :border="false"
-          :rules="[
-            { required: true, message: '请输入账号' },
-            { validator: validatorAccount, message: '请输入正确的账号' }
-          ]"
-        >
-          <div slot="left-icon">
-            <img src="./imgs/phone@2x.png" alt="" class="phoneIcon">
-          </div>
-        </van-field>
-        <van-field
-          v-model="loginForm.password"
-          left-icon="smile-o"
-          type="password"
-          :border="false"
-          name="validatorPassword"
-          placeholder="密码"
-          :rules="[
-            { required: true, message: '请输入密码' },
-            { validator: validatorPassword, message: '请输入正确的密码' }
-          ]"
-        >
-          <div slot="left-icon">
-            <img src="./imgs/lock@2x.png" alt="" class="lockIcon">
-          </div>
-        </van-field>
+      <van-field
+        v-model="loginForm.account"
+        name="validatorAccount"
+        placeholder="请输入账号"
+        :border="false"
+        :rules="[
+          { required: true, message: '请输入账号' },
+          { validator: validatorAccount, message: '请输入正确的账号' }
+        ]"
+      >
+        <div slot="left-icon">
+          <img src="./imgs/phone@2x.png" alt="" class="phoneIcon">
+        </div>
+      </van-field>
+      <van-field
+        v-model="loginForm.password"
+        left-icon="smile-o"
+        type="password"
+        :border="false"
+        name="validatorPassword"
+        placeholder="密码"
+        :rules="[
+          { required: true, message: '请输入密码' },
+          { validator: validatorPassword, message: '请输入正确的密码' }
+        ]"
+      >
+        <div slot="left-icon">
+          <img src="./imgs/lock@2x.png" alt="" class="lockIcon">
+        </div>
+      </van-field>
       <van-button v-preventreclick type="info" block class="loginBtn">
         登录
       </van-button>

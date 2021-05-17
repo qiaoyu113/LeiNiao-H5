@@ -49,6 +49,7 @@ async function getOssConfigFunc() {
 }
 
 function mulUpload(client, fileName, file) {
+  // eslint-disable-next-line no-async-promise-executor
   return new Promise(async(resolve, reject) => {
     client.multipartUpload(fileName, file, {
 

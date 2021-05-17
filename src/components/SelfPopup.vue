@@ -79,6 +79,7 @@ export default {
   padding: 10px 8px;
   display: flex;
   background-color: #fff;
+  border-radius: 6px;
 }
 .SelfPopup .van-button + .van-button{
   margin-left: 5px;

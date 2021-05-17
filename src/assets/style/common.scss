@@ -92,14 +92,14 @@ $--transition-time: 300ms;
 .van-dialog {
   .van-dialog__header {
     margin-bottom: 15px;
-    padding-top: 15px;
-    color: #3c4353;
+    // padding-top: 15px;
+    color: #4A4A4A;
     line-height: 21px;
   }
   .van-dialog__message{
     margin-bottom: 38px;
     padding: 0;
-    color: #838A9D;
+    color: #838383;
   }
   .van-dialog__footer{
     padding: 0 42px 30px;
@@ -109,18 +109,19 @@ $--transition-time: 300ms;
     .van-button{
       width: 70px;
       height: 36px;
-      border: 1px solid #2F448A;
+      border: 1px solid #188FF9;
       font-size: 15px;
-      color: #2F448A;
+      color: #188FF9;
       border-radius: 3px;
     }
     .van-dialog__cancel{
-      margin-right: 15px;
+      margin-right: 8px;
       background-color: #fff;
+      color: #188FF9;
     }
     .van-dialog__confirm{
       color: #fff;
-      background-color: #2F448A;
+      background-color: #188FF9;
     }
   }
 }

@@ -17,11 +17,11 @@
               >
                 <div class="grid-ct flex-sub">
                   <div class="list-badge">
-                    <van-image width="80" height="80" :src="require(`../../assets/images/${item.icon}`)"/>
+                    <van-image width="80" height="80" :src="require(`../../assets/images/${item.icon}`)" />
                     <div class="badge-info">
                       <template>
-                          {{ getTotal(item.total) }}
-                        </template>
+                        {{ getTotal(item.total) }}
+                      </template>
                     </div>
                   </div>
                   <div class="grid-text">
@@ -72,15 +72,25 @@ export default {
         [
           {
             title: '看车单管理',
+            url: '/visit-car',
+            icon: 'grade',
+            pUrl: '/v1/score/assess/h5',
+            style: {
+              width: '1.0933rem',
+              height: '1.0933rem'
+            }
+          },
+          {
+            title: '看车单管理',
             url: '/carManage',
             icon: 'cardList.png',
             pUrl: '/v1/score/assess/h5',
             style: {
-              width: '0.9333rem',
+              width: '1.0933rem',
               height: '1.0933rem'
             },
             total: 'totalNum'
-          },
+          }
         ]
       ]
     };
