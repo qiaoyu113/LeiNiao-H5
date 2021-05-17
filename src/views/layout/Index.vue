@@ -22,8 +22,8 @@
                     <svg-icon class="icon" :icon-class="item.icon" />
                     <div class="badge-info">
                       <template>
-                          {{ getTotal(item.total) }}
-                        </template>
+                        {{ getTotal(item.total) }}
+                      </template>
                     </div>
                   </div>
 
@@ -83,7 +83,7 @@ export default {
               height: '1.0933rem'
             },
             total: 'totalNum'
-          },
+          }
         ]
       ]
     };

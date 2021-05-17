@@ -1,3 +1,4 @@
+/* eslint-disable */
 let OSS = require('ali-oss');
 import { Toast } from 'vant';
 import { GetOssConfig } from '@/api/common'

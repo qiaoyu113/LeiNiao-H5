@@ -13,6 +13,7 @@ export default {
       }
     },
     DEL_CACHED_VIEW(state, view) {
+      // eslint-disable-next-line no-unused-vars
       for (const [i, v] of state.cachedViews.entries()) {
         if (v === view.name) {
           state.cachedViews.splice(i, 1)

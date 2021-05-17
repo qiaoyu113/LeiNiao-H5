@@ -1,3 +1,4 @@
+/* eslint-disable */
 import asyncValidator from 'async-validator'
 
 class validator {
