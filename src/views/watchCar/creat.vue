@@ -171,9 +171,14 @@ export default {
       },
       // 添加
       addHandle(i){
-          let obj={ time:"",show:true}
-          this.watchTime[i].show=false;
-          this.watchTime.push(obj)
+          if(this.watchTime[i].time){
+                let obj={ time:"",show:true}
+                this.watchTime[i].show=false;
+                this.watchTime.push(obj)
+          }else{
+               this.$toast.fail('请选择时间')
+          }
+
       },
       // 删除日期
       reduceHandle(i){
@@ -204,7 +209,7 @@ export default {
            this.showAction=false
            this.setIndex=-1
       },
-      onChange(picker, value){
+      onChange(picker, value,index){
         if(this.curDay==value[0]){
             //选当天时
             this.timeLists.forEach(item=>{
@@ -215,21 +220,27 @@ export default {
                 }
             })
             picker.setColumnValues(1,this.timeLists)
-        }else{
+            picker.setColumnValues(2,this.timeLists)
+        }else if(index==0){
+            // 日期变化时
             this.timeLists.forEach(item=>{
                item.disabled=false
             })
             picker.setColumnValues(1,this.timeLists)
+            picker.setColumnValues(2,this.timeLists)
+        }else if(index==1){
+             // 开始时间变化时
+            let startTime=value[1].text;
+            this.timeLists.forEach(item=>{
+                if(startTime.split(":")[0]>=item.text.split(":")[0]){
+                    item.disabled=true
+                }else{
+                    item.disabled=false
+                }
+            })
+            picker.setColumnValues(2,this.timeLists)
         }
-        let startTime=value[1].text;
-        this.timeLists.forEach(item=>{
-            if(startTime.split(":")[0]>=item.text.split(":")[0]){
-                item.disabled=true
-            }else{
-                item.disabled=false
-            }
-        })
-        picker.setColumnValues(2,this.timeLists)
+
       }
   },
   created() {
