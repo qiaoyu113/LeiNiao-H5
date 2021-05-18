@@ -52,7 +52,7 @@ router.beforeEach(async(to, from, next) => {
       // }
       localStorage.setItem('loginUrl', to.path)
       // 无论拒绝还是授权都设置成1
-      // next(`/login?redirect=${to.path}`)
+      next(`/login?redirect=${to.path}`)
       next()
     }
   }

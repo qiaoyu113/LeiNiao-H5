@@ -72,16 +72,6 @@ export default {
         [
           {
             title: '看车单管理',
-            url: '/visit-car',
-            icon: 'grade',
-            pUrl: '/v1/score/assess/h5',
-            style: {
-              width: '1.0933rem',
-              height: '1.0933rem'
-            }
-          },
-          {
-            title: '看车单管理',
             url: '/carManage',
             icon: 'cardList.png',
             pUrl: '/v1/score/assess/h5',
