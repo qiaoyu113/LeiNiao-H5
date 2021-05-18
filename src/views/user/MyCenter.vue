@@ -2,10 +2,16 @@
   <div class="mycenter">
     <van-nav-bar title="个人中心" />
     <div class="userInfo">
-        <span class="avatar"></span>
-        <h2 class="name">{{userData.bssLoginName?userData.bssLoginName:'暂无'}}</h2>
-        <p class="phone">手机号：{{userData.mobile?userData.mobile:'暂无'}}</p>
-        <p class="role">角色：{{userData.roleName?userData.roleName:"暂无"}}</p>
+      <span class="avatar"></span>
+      <h2 class="name">
+        {{ userData.bssLoginName?userData.bssLoginName:'暂无' }}
+      </h2>
+      <p class="phone">
+        手机号：{{ userData.mobile?userData.mobile:'暂无' }}
+      </p>
+      <p class="role">
+        角色：{{ userData.roleName?userData.roleName:"暂无" }}
+      </p>
     </div>
     <div class="cell-top">
       <van-cell title="修改密码" is-link @click="toResetPwd" />
@@ -13,7 +19,8 @@
     <div style="padding: 0 38px; box-sizing: border-box">
       <van-button
         style="margin-top: 50px"
-        plain type="info"
+        plain
+        type="info"
         block
         @click="removeLocal"
       >
